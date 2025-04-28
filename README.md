@@ -9,7 +9,7 @@ import seaborn as sns
 df = pd read_csv("advancement_donations_and_giving_demo.csv")
 df['Gift Date'] = pd.to_datetime(df['Gift Date'], errors='coerce')
 
-#1. Optional: Set seaborn style
+#1.Optional: Set seaborn style
 sns.set(style="whitegrid")
 plt.figure(figsize=(12, 6))
 college_totals = df.groupby('College')['Gift Amount'].sum().sort_values(ascending=False)
@@ -19,7 +19,7 @@ plt.xlabel('Total Gift Amount')
 plt.tight_layout()
 plt.show()
 
-#2.  Donation Count by State bar graph
+#2.Donation Count by State bar graph
 plt.figure(figsize=(10, 6))
 state_counts = df['State'].value_counts()
 sns.barplot(x=state_counts.index, y=state_counts.values, palette="magma")
@@ -29,20 +29,20 @@ plt.xlabel('State')
 plt.tight_layout()
 plt.show()
 
-#3.  Monthly Donation Trends line graph
+#3.Monthly Donation Trends line graph
 df['Month'] = df['Gift Date'].dt.to_period('M')
 monthly_totals = df.groupby('Month')['Gift Amount'].sum()
 
 plt.figure(figsize=(14, 6))
 monthly_totals.plot(kind='line', marker='o', color='teal')
-plt.title ('Monthly Donation Trends')
-plt.ylabel ('Total Gift Amount')
-plt.xlabel ('Month')
-plt.xticks (rotation=45)
+plt.title('Monthly Donation Trends')
+plt.ylabel('Total Gift Amount')
+plt.xlabel('Month')
+plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-#4.  Average Donation by Major (Top 10) pie chart
+#4.Average Donation by Major (Top 10) pie chart
 
 major_avg = df.groupby('Major')['Gift Amount'].mean().sort_values(ascending=False).head(10)
 plt.figure(figsize=(8, 8))
@@ -58,7 +58,7 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.tight_layout()
 plt.show()
 
-#5. Top 10 Cities by Total Gift Amount heat map
+#5.Top 10 Cities by Total Gift Amount heat map
 
 city_totals = df.groupby('City')['Gift Amount'].sum().sort_values(ascending=False).head(10)
 city_df = city_totals.to_frame().sort_values('Gift Amount', ascending=True)  # reverse for better gradient
