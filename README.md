@@ -2,8 +2,9 @@
 🎓 Advancement Donations Data Handling & Visualization
 This Python script performs exploratory data analysis and visualization on a dataset of advancement donations, providing insights into giving trends by college, state, major, and city. Ideal for alumni relations, fundraising teams, or institutional research teams.
 
-📊 Features
+📊 Features:
 1. Total Gift Amount by College:
+
 → Bar chart of total donations received by each college.
 
 → Highlights the most supported colleges.
@@ -32,7 +33,7 @@ This Python script performs exploratory data analysis and visualization on a dat
 
 → Useful for regional advancement strategy.
 
-🛠️ Libraries Used
+🛠️ Libraries Used:
 
 → pandas – data loading and transformation
 
